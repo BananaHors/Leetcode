@@ -1,0 +1,20 @@
+#include <string>
+using namespace std;
+class Solution {
+public:
+    string digitSum(string s, int k) {
+        string st;
+        while(s.size()>k){
+            st ="";
+            for(int i=0;i<s.size();i+=k){
+                int sum = 0;
+                for(int j=i;j<s.size() && j<i+k;j++){
+                    sum+= s[j]-'0';
+                }
+                st+=to_string(sum);
+            }
+            s=st;
+        }
+        return s;
+    }
+};
